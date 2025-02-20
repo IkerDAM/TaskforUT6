@@ -3,7 +3,7 @@
 
     background-color: gray;
     color:white;
-    align-content:space-between 4rem;
+    align-content:space-around 4rem;
     position:top;
     width:100%;
     padding-top:7px;
@@ -13,8 +13,23 @@
     position:center;
     padding-bottom:10px;
     padding-top:10px;
+   
   
 }
+
+.Menu{
+   display:flex;
+   justify-content: space-around;
+   margin: 0 750px;
+   text-align:center;
+}
+
+.parrafo{
+
+    
+}
+   
+
    
     
    
