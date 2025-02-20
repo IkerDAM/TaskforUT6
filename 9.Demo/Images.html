@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Imagen Automáticamente y con Botón</title>
+</head>
+<body>
+
+   
+    <h1>Cambio Manual de Imagen</h1>
+    <img id="imagenManual" src="html.png" alt="Imagen Manual" width="300">
+    
+    
+    <button onclick="cambiarImagenManual()">Cambiar Imagen Manualmente</button>
+
+    <script>
+        
+        function cambiarImagenManual() {
+            var img = document.getElementById('imagenManual');
+            
+           
+            if (img.src.match("html.png")) {
+                img.src = "css.png";  
+            } else {
+                img.src = "html.png";  
+            }
+        }
+    </script>
+
+    <br><br>
+
+   
+    <h1>Cambio Automático de Imagen</h1>
+    <img id="imagenAutomatica" src="html.png" alt="Imagen Automática" width="300">
+    
+    <script>
+        
+        function cambiarImagenAutomatica() {
+            var img = document.getElementById('imagenAutomatica');
+            
+           
+            if (img.src.match("html.png")) {
+                img.src = "css.png";  
+            } else {
+                img.src = "html.png";  
+            }
+        }
+
+       
+        setInterval(cambiarImagenAutomatica, 3000);
+    </script>
+
+</body>
+</html>
