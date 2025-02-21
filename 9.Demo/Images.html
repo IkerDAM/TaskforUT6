@@ -10,7 +10,7 @@
 
    
     <h1>Cambio Manual de Imagen</h1>
-    <img id="imagenManual" src="html.png" alt="Imagen Manual" width="300">
+    <img id="imagenManual" src="HTML1.png" alt="Imagen Manual" width="300">
     
     
     <button onclick="cambiarImagenManual()">Cambiar Imagen Manualmente</button>
@@ -21,19 +21,25 @@
             var img = document.getElementById('imagenManual');
             
            
-            if (img.src.match("html.png")) {
-                img.src = "css.png";  
+            if (img.src.match("HTML1.png")) {
+                img.src = "CSS1.png";  
+            } else if (img.src.match("CSS1.png")) {
+                img.src = "JS1.png";  
             } else {
-                img.src = "html.png";  
+                img.src = "HTML1.png";  
             }
-        }
+
+
+}
+
+        
     </script>
 
     <br><br>
 
    
     <h1>Cambio Automático de Imagen</h1>
-    <img id="imagenAutomatica" src="html.png" alt="Imagen Automática" width="300">
+    <img id="imagenAutomatica" src="HTML1.png" alt="Imagen Automática" width="300">
     
     <script>
         
@@ -41,10 +47,12 @@
             var img = document.getElementById('imagenAutomatica');
             
            
-            if (img.src.match("html.png")) {
-                img.src = "css.png";  
+            if (img.src.match("HTML1.png")) {
+                img.src = "CSS1.png";  
+            } else if (img.src.match("CSS1.png")) {
+                img.src = "JS1.png";  
             } else {
-                img.src = "html.png";  
+                img.src = "HTML1.png";  
             }
         }
 

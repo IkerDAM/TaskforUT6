@@ -1,7 +1,7 @@
 
 .header{
 
-    background-color: gray;
+    background-color: rgb(68, 67, 67);
     color:white;
     align-content:space-around 4rem;
     position:top;
@@ -24,11 +24,11 @@
    text-align:center;
 }
 
-.parrafo{
-
+a{
     
+    color:white;
+
 }
-   
 
    
     

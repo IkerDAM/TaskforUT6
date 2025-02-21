@@ -12,9 +12,8 @@
         <div class="Menu">
         
             <p class="parrafo"><strong>Personalizer</strong></p> 
-            <p class="parrafo"><strong>Form</strong></p> 
-            <p class="parrafo"><strong>Images</strong></p>
-        
+            <p class="parrafo"><a href="Form.html"><strong>Form</strong></p></a>
+            <p class="parrafo"><a href="Images.html"><strong>Images</p></strong></a>
         </div>
     </header>
 
@@ -23,6 +22,105 @@
     <h3>This is paragraph that you can adapt its content.</h3>
     <h3>Click to Personalizer banner.</h3>
 
+
+    <style>
+        
+        #menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        #personalizer {
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="personalizer">
+        Personalizer
+    </div>
+
+   
+    <div id="menu">
+        <h4>Opciones de Estilo</h4>
+        <button onclick="cambiarTamano('xs')">Tamaño xs (12px)</button>
+        <button onclick="cambiarTamano('s')">Tamaño s (14px)</button>
+        <button onclick="cambiarTamano('m')">Tamaño m (16px)</button>
+        <button onclick="cambiarTamano('l')">Tamaño l (20px)</button>
+        <button onclick="cambiarTamano('xl')">Tamaño xl (24px)</button>
+        <button onclick="cambiarTamano('a')">Tamaño a (18px)</button>
+        <button onclick="cambiarTamano('t')">Tamaño t (22px)</button>
+        <button onclick="cambiarTamano('c')">Tamaño c (28px)</button>
+        <button onclick="cambiarTamano('f')">Tamaño f (30px)</button>
+        <button onclick="cambiarTamano('m2')">Tamaño m2 (32px)</button>
+        <button onclick="cambiarFondo('red')">Fondo rojo</button>
+        <button onclick="cambiarFondo('blue')">Fondo azul</button>
+        <button onclick="cambiarFondo('black')">Fondo negro</button>
+        <button onclick="cambiarFondo('white')">Fondo blanco</button>
+        <button onclick="cambiarFondo('green')">Fondo verde</button>
+        <button onclick="cambiarColorTexto('red')">Color de letra rojo</button>
+        <button onclick="cambiarColorTexto('blue')">Color de letra azul</button>
+        <button onclick="cambiarColorTexto('black')">Color de letra negro</button>
+        <button onclick="cambiarColorTexto('white')">Color de letra blanco</button>
+        <button onclick="cambiarColorTexto('green')">Color de letra verde</button>
+    </div>
+
+    <script>
+        
+        const personalizer = document.getElementById('personalizer');
+        const menu = document.getElementById('menu');
+
+        personalizer.addEventListener('click', function(e) {
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            
+            menu.style.left = e.pageX + 'px';
+            menu.style.top = e.pageY + 'px';
+        });
+
+        
+        function cambiarTamano(tamano) {
+            const tamaños = {
+                'xs': '12px',
+                's': '14px',
+                'm': '16px',
+                'l': '20px',
+                'xl': '24px',
+                'a': '18px',
+                't': '22px',
+                'c': '28px',
+                'f': '30px',
+                'm2': '32px'
+            };
+            document.body.style.fontSize = tamaños[tamano] || '16px'; 
+            menu.style.display = 'none'; 
+        }
+
+        
+        function cambiarFondo(color) {
+            document.body.style.backgroundColor = color;
+            menu.style.display = 'none'; 
+        }
+
+        function cambiarColorTexto(color) {
+            document.body.style.color = color;
+            menu.style.display = 'none'; 
+        }
+
+        
+        window.addEventListener('click', function(e) {
+            if (!menu.contains(e.target) && e.target !== personalizer) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
 
 
 
