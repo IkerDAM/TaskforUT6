@@ -30,6 +30,34 @@ a{
 
 }
 
+.form-container{
+
+    width:80%;
+    margin:auto;
+    max-width: 400px;
+    padding:20px;
+    box-shadow:rgba(0, 0, 0, 0.1);
+    position:center;
+  }
+
+  .form-row{
+
+    margin-bottom:15px;
+  }
+
+  label{
+    margin-bottom:5px;
+  }
+
+  .interiorcounterFlex{
+
+      position:absolute;
+      align-content: space-between 0.25rem;
+      top:30px;
+      color:white;
+      left:1200px;
+  }
+
    
     
    
