@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambiar Imagen Automáticamente y con Botón</title>
+    <title>Images</title>
     <link rel="stylesheet" href="Estilos.css">
 </head>
 <body>
@@ -14,16 +14,16 @@
             <p class="parrafo"><a href="Personalizer.html"><strong>Personalizer</strong></p> 
             <p class="parrafo"><a href="Form.html"><strong>Form</strong></p></a>
             <p class="parrafo"><strong>Images</p></strong></a>
-            <p class="parrafo"><strong>Mode</strong></p>
+            <p class="parrafo"><strong><span id="toggleMode" style="color:white; cursor:pointer;">Mode</span></strong></p>
         </div>
     </header>
 
    
-    <h1>Cambio Manual de Imagen</h1>
+    <font color="blue"><h1>Magic Button: Create & Change Image</h1></font>
     <img id="imagenManual" src="HTML1.png" alt="Imagen Manual" width="300">
     
     
-    <button onclick="cambiarImagenManual()">Cambiar Imagen Manualmente</button>
+    <button onclick="cambiarImagenManual()">Change Image!</button>
 
     <script>
         
@@ -48,7 +48,7 @@
     <br><br>
 
    
-    <h1>Cambio Automático de Imagen</h1>
+    <font color="blue"><h1>AutoLoading</h1></font>
     <img id="imagenAutomatica" src="HTML1.png" alt="Imagen Automática" width="300">
     
     <script>
@@ -69,6 +69,43 @@
        
         setInterval(cambiarImagenAutomatica, 200);
     </script>
+
+
+<script>
+       
+    const toggleModeWord = document.getElementById('toggleMode');
+
+    
+    function toggleMode() {
+        const body = document.body;
+
+       
+        if (body.style.backgroundColor === 'rgb(51, 51, 51)') { 
+            body.style.backgroundColor = '#fff'; 
+            body.style.color = '#000'; 
+            localStorage.setItem('darkMode', 'false'); 
+        } else {
+            body.style.backgroundColor = '#333'; 
+            body.style.color = '#fff'; 
+            localStorage.setItem('darkMode', 'true'); 
+        }
+    }
+
+   
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.style.backgroundColor = '#333';
+        document.body.style.color = '#fff';
+    } else {
+        document.body.style.backgroundColor = '#fff';
+        document.body.style.color = '#000';
+    }
+
+  
+    toggleModeWord.addEventListener('click', toggleMode);
+</script>
+
+
+
 
 </body>
 </html>

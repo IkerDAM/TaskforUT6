@@ -15,7 +15,7 @@
             <p class="parrafo"><a href="Personalizer.html"><strong>Personalizer</strong></p> </a>
             <p class="parrafo"><strong>Form</strong></p>
             <p class="parrafo"><a href="Images.html"><strong>Images</p></strong></a>
-            <p class="parrafo"><strong>Mode</strong></p>
+            <p class="parrafo"><strong><span id="toggleMode" style="color:white; cursor:pointer;">Mode</span></strong></p>
         </div>
     </header>
 
@@ -68,6 +68,39 @@
         </form>
     </div>
 
+
+    <script>
+       
+      const toggleModeWord = document.getElementById('toggleMode');
+  
+      
+      function toggleMode() {
+          const body = document.body;
+  
+         
+          if (body.style.backgroundColor === 'rgb(51, 51, 51)') { 
+              body.style.backgroundColor = '#fff'; 
+              body.style.color = '#000'; 
+              localStorage.setItem('darkMode', 'false'); 
+          } else {
+              body.style.backgroundColor = '#333'; 
+              body.style.color = '#fff'; 
+              localStorage.setItem('darkMode', 'true'); 
+          }
+      }
+  
+     
+      if (localStorage.getItem('darkMode') === 'true') {
+          document.body.style.backgroundColor = '#333';
+          document.body.style.color = '#fff';
+      } else {
+          document.body.style.backgroundColor = '#fff';
+          document.body.style.color = '#000';
+      }
+  
+    
+      toggleModeWord.addEventListener('click', toggleMode);
+  </script>
 
 
 
